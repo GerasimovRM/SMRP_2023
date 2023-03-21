@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Text, Integer
 
-from database.base_meta import Base
+from .base_meta import Base
 
 
 class School(Base):

@@ -20,7 +20,7 @@ def global_init(db_file):
     connection_string = f'sqlite:///{db_file}'
     print(f"Подключение к БД: {connection_string}")
 
-    engine = sa.create_engine(connection_string, echo=True)
+    engine = sa.create_engine(connection_string)
     __factory = orm.sessionmaker(engine)
 
 

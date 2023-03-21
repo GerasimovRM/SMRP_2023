@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Text, ForeignKey
 from sqlalchemy.orm import relationship
 
-from database.base_meta import Base
+from .base_meta import Base
 
 
 class Student(Base):
@@ -14,6 +14,7 @@ class Student(Base):
     school_id = Column(ForeignKey('School.id'), nullable=False)
 
     school = relationship('School')
+    parents = relationship("ParentStudent", back_populates="student")
 
     def __str__(self):
         return f"Студент {self.id}: {self.name} {self.bdate}"
