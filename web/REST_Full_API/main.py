@@ -5,6 +5,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from endpoints import student_router
+from database import get_session
 
 
 app = FastAPI()
@@ -110,7 +111,7 @@ async def put_item(item_id: int):
 
 
 if __name__ == "__main__":
-    uvicorn.run("web.REST_Full_API.main:app",
+    uvicorn.run("main:app",
                 host="127.0.0.1",
                 port=5000,
                 log_level="info",

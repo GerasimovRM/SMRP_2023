@@ -6,7 +6,7 @@ from .base_meta import Base
 
 class Student(Base):
     __tablename__ = 'Student'
-    __table_args__ = {'extend_existing': True}
+    # __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key=True)
     name = Column(Text(100), nullable=False)
